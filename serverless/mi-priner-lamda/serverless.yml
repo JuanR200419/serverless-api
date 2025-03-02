@@ -1,0 +1,19 @@
+service: mi-priner-lamda
+frameworkVersion: '3'
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: python3.9
+
+functions:
+  function1:
+    handler: handler.hello
+    events:
+      - http:
+          path: /
+          method: get
+
+
